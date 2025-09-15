@@ -1,5 +1,11 @@
 # FishingApp 🎣
+<img src="https://img.icons8.com/color/96/fishing.png" alt="logo" width="120"/>
 
+[![Build Status](https://github.com/Juanzett/FishingApp/actions/workflows/ci.yml/badge.svg)](https://github.com/Juanzett/FishingApp/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+---
 Aplicación de pesca enfocada en Argentina que combina registro personal, comunidad y contenido educativo.  
 Permite guardar ubicaciones de pesca con GPS, registrar capturas, compartir fotos y consultar información sobre especies y técnicas locales.
 
@@ -55,14 +61,38 @@ La idea surge de la necesidad de tener una herramienta **localizada** (Argentina
    - Sincronización entre dispositivos.  
    - Internacionalización (expandir más allá de Argentina).  
 
+### 📅 Futuro
+- Integración con GPS en tiempo real.
+- Modo offline con sincronización.
+- Clima en tiempo real.
+- Eventos y rankings de pesca.
+- Comunidad con comentarios y reacciones.
 ---
+## 📂 Estructura del Repositorio
 
+FishingApp/
+│── README.md # Documentación principal
+│── CONTRIBUTING.md # Guía para contribuir
+│── .github/workflows/ # Workflows de CI/CD
+│ └── ci.yml
+│── src/ # Código fuente
+│── docs/ # Documentación extendida
+│── tests/ # Pruebas
+
+---
 ## 🤝 Cómo contribuir
-Mirá el archivo [CONTRIBUTING.md](CONTRIBUTING.md) para más detalles sobre cómo podés ayudar al proyecto.
+Las contribuciones son bienvenidas 🎉.  
+Revisá la guía en [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Pasos rápidos:
+1. Haz un fork del repo.
+2. Crea una branch: `git checkout -b feature/nueva-funcionalidad`.
+3. Commit: `git commit -m "Agrego nueva funcionalidad"`.
+4. Push: `git push origin feature/nueva-funcionalidad`.
+5. Abre un Pull Request.
 ---
 
 ## 📌 Licencia
-(Open-Source).
-
+Este proyecto está bajo la licencia MIT.  
+Consulta el archivo [LICENSE](LICENSE) para más información.
 By Juanzet
