@@ -1,7 +1,7 @@
 # FishingApp 🎣
 <img src="https://img.icons8.com/color/96/fishing.png" alt="logo" width="120"/>
 
-[![Build Status](https://github.com/Juanzett/Fishing-App/actions/.github/workflows/ci.yml/badge.svg)](https://github.com/Juanzett/FishingApp/actions)
+[![Build Status](https://github.com/Juanzett/Fishing-App/actions/.github/workflows/ci.yml/badge.svg)](https://github.com/Juanzett/Fishing-App/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
