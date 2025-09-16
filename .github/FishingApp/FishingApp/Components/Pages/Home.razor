@@ -1,0 +1,73 @@
+﻿@page "/"
+@using MudBlazor
+@inject FishingApp.Services.LocationService LocationService
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="pa-4">
+
+    <MudStack Spacing="2">
+        <MudText Typo="Typo.h4" GutterBottom="true">FishingApp</MudText>
+        <MudText Typo="Typo.subtitle1">Demo mínima con ubicaciones simuladas</MudText>
+
+        <MudStack Row="true" Spacing="1">
+            <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="SaveLocation" StartIcon="@Icons.Material.Filled.AddLocation">
+                Guardar ubicación simulada
+            </MudButton>
+            <MudButton Color="Color.Secondary" Variant="Variant.Outlined" OnClick="Clear" StartIcon="@Icons.Material.Filled.Delete">
+                Limpiar
+            </MudButton>
+        </MudStack>
+
+        <MudDivider Class="my-2" />
+
+        <MudPaper Elevation="1" Class="pa-2">
+            <MudText Typo="Typo.h6" GutterBottom="true">Historial</MudText>
+
+            @if (_items.Count == 0)
+            {
+                <MudAlert Severity="Severity.Info" Dense="true" Variant="Variant.Filled" Elevation="0">
+                    Aún no hay ubicaciones guardadas. Pulsa el botón para agregar una.
+                </MudAlert>
+            }
+            else
+            {
+                <MudList T="FishingApp.Services.LocationEntry" Dense="true">
+                    @foreach (var it in _items)
+                    {
+                        <MudListItem T="FishingApp.Services.LocationEntry"
+                                     Value="it"
+                                     Icon="@Icons.Material.Filled.Place">
+                            <MudText>
+                                <b>@it.When.LocalDateTime</b> —
+                                Lat: @it.Latitude.ToString("F5"),
+                                Lng: @it.Longitude.ToString("F5")
+                            </MudText>
+                        </MudListItem>
+                    }
+                </MudList>
+            }
+        </MudPaper>
+    </MudStack>
+
+</MudContainer>
+
+@code {
+    private List<FishingApp.Services.LocationEntry> _items = new();
+
+    protected override void OnInitialized()
+    {
+        _items = LocationService.GetAll().ToList();
+    }
+
+    private async Task SaveLocation()
+    {
+        await LocationService.AddSimulatedAsync();
+        _items = LocationService.GetAll().ToList();
+        StateHasChanged();
+    }
+
+    private void Clear()
+    {
+        LocationService.Clear();
+        _items.Clear();
+    }
+}
